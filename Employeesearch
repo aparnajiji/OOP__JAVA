@@ -1,0 +1,69 @@
+import java.util.Scanner;
+class Employee
+{
+	int eno;
+	String ename;
+	double esal;
+	Employee(int eno,String ename,double esal)
+	{
+		this.eno=eno;
+		this.ename=ename;
+		this.esal=esal;
+	}
+}
+class Employeesearch
+{
+	public static void main(String[] args)
+	{
+		int ch;
+		Scanner s =new Scanner(System.in);
+		System.out.print("\n Enter the total number of employees : ");
+		int n=s.nextInt();
+		Employee[] e=new Employee[n];
+		for(int i=0;i<n;i++)
+		{
+			System.out.print("\n \n ENTER THE DETAILS OF EMPLOYEE : "+(i+1)+"\n");
+			System.out.print("\n Enter the number of the Employee: ");
+	        int eno=s.nextInt();
+			System.out.print("\n Enter the name of the Employee: ");
+	        String ename=s.next();
+			System.out.print("\n Enter the salary of the Employee: ");
+	        double esal=s.nextDouble();
+			
+			e[i]=new Employee(eno,ename,esal);
+		}
+		System.out.print("\n *****************************************************************");
+		System.out.print("\n EMPLOYEE DETAILS ARE ");
+		for(int i=0;i<n;i++)
+		{
+			System.out.print("\n EMPLOYEE : "+(i+1)+"\n");
+			System.out.println("\n EMPLOYEE NUMBER : "+e[i].eno);
+			System.out.print("\n EMPLOYEE NAME  : "+e[i].ename);
+			System.out.print("\n EMPLOYEE SALARY : "+e[i].esal);
+		}
+		 
+		 System.out.print("\n *****************************************************************");
+		 
+		 System.out.print("\n ENTER THE EMPLOYEE NUMBER TO SEARCH : ");
+		                 int num=s.nextInt();
+		                 boolean found = false;
+		                 for(int i=0;i<n;i++)
+		
+                         {
+                         if(e[i].eno==num)
+	                      {
+			                 System.out.println("\n EMPLOYEE FOUND \n");
+			                 System.out.println("\n EMPLOYEE NUMBER : "+e[i].eno);
+                             System.out.println("\n EMPLOYEE NAME : "+e[i].ename);
+                             System.out.println("\n EMPLOYEE SALARY : "+e[i].esal);
+							 found = true;
+	                         break;
+	                       }
+	                    
+	                     }
+			if(!found)
+			{
+			  System.out.println("\n EMPLOYEE FOUND \n");	
+			}
+	}
+}
